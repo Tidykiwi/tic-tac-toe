@@ -13,8 +13,8 @@ public class Board {
 		/** Constructor to create the game board */
 		public Board() {
 			
-		 //TODO: initialise the cells array using ROWS and COLS constants 
-
+			//DONE: initialise the cells array using ROWS and COLS constants 
+			cells = new Cell [GameMain.ROWS][GameMain.COLS];
 			
 			for (int row = 0; row < GameMain.ROWS; ++row) {
 				for (int col = 0; col < GameMain.COLS; ++col) {
@@ -23,7 +23,6 @@ public class Board {
 			}
 		}
 		
-
 		 /** Return true if it is a draw (i.e., no more EMPTY cells) */ 
 		public boolean isDraw() {
 			 
@@ -32,7 +31,6 @@ public class Board {
 			// Hint: Return false if it is not a draw, return true if there are no empty positions left
 			   
 			
-
 			
 		}
 		
