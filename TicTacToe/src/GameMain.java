@@ -25,8 +25,7 @@ public class GameMain extends JPanel implements MouseListener{
 	// the game board 
 	private Board board;
 	 	 
-	//TODO: create the enumeration for the variable below (GameState currentState)
-	//HINT all of the states you require are shown in the code within GameMain
+	//DONE: create the enumeration for the variable below (GameState currentState)
 	private GameState currentState; 
 	
 	// the current player
@@ -95,13 +94,15 @@ public class GameMain extends JPanel implements MouseListener{
 			statusBar.setForeground(Color.BLACK);          
 			if (currentPlayer == Player.Cross) {   
 			
-				//TODO: use the status bar to display the message "X"'s Turn
-
+				//DONE: use the status bar to display the message "X"'s Turn
+				statusBar.setForeground(Color.RED);
+				statusBar.setText("Your move X!");	
 				
 			} else {    
 				
-				//TODO: use the status bar to display the message "O"'s Turn
-
+				//DONE: use the status bar to display the message "O"'s Turn
+				statusBar.setForeground(Color.RED);
+				statusBar.setText("Your move O!");
 				
 			}       
 			} else if (currentState == GameState.Draw) {          
