@@ -45,8 +45,8 @@ public class Cell {
 		/** Set this cell's content to EMPTY */
 		public void clear() {
 			
-			// TODO: Set the value of content to Empty (Remember this is an enum)
-
+			// DONE: Set the value of content to Empty (Remember this is an enum)
+			content = Player.Empty;
 			
 		}
 }
