@@ -1,6 +1,21 @@
-import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
+import java.awt.Stroke;
+import java.awt.BasicStroke;
+import java.awt.BorderLayout;
+import java.awt.Font;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import javax.swing.JPanel;
+import javax.swing.Timer;
+import javax.swing.BorderFactory;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
 
 
 public class GameMain extends JPanel implements MouseListener{
@@ -56,9 +71,10 @@ public class GameMain extends JPanel implements MouseListener{
 		
 		
 		// TODO: Create a new instance of the game "Board"class. HINT check the variables above for the correct name
+		Board board = new Board();
 
 		
-		//TODO: call the method to initialise the game board
+		//DONE: call the method to initialise the game board
 		initGame();
 
 	}
@@ -71,11 +87,9 @@ public class GameMain extends JPanel implements MouseListener{
 				JFrame frame = new JFrame(TITLE);
 				
 				//TODO: create the new GameMain panel and add it to the frame
-						
 				
 				
 				//TODO: set the default close operation of the frame to exit_on_close
-		            
 				
 				frame.pack();             
 				frame.setLocationRelativeTo(null);
