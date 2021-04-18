@@ -12,8 +12,9 @@ public class Cell {
 		/** Constructor to initialise this cell with the specified row and col */
 		public Cell(int row, int col) {
 			
-			// TODO: Initialise the variables row, col 
-
+			// DONE: Initialise the variables row, col 
+			this.row = row;
+			this.col = col;
 			
 			
 			//DONE: call the method that sets the cell content to EMPTY
