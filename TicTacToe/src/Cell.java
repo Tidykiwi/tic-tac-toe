@@ -4,7 +4,8 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 
 public class Cell {
-	 //content of this cell (empty, cross, nought)
+	
+	 	//content of this cell (empty, cross, nought)
 		Player content;
 		//row and column of this cell
 		int row, col;
@@ -14,8 +15,7 @@ public class Cell {
 			
 			// DONE: Initialise the variables row, col 
 			this.row = row;
-			this.col = col;
-			
+			this.col = col;			
 			
 			//DONE: call the method that sets the cell content to EMPTY
 			clear();
@@ -33,12 +33,14 @@ public class Cell {
 			int x1 = col * GameMain.CELL_SIZE + GameMain.CELL_PADDING;
 			int y1 = row * GameMain.CELL_SIZE + GameMain.CELL_PADDING;
 			if (content == Player.Cross) {
+				// If the cells content is Player.Cross then draw a cross
 				graphic2D.setColor(Color.RED);
 				int x2 = (col + 1) * GameMain.CELL_SIZE - GameMain.CELL_PADDING;
 				int y2 = (row + 1) * GameMain.CELL_SIZE - GameMain.CELL_PADDING;
 				graphic2D.drawLine(x1, y1, x2, y2);
 				graphic2D.drawLine(x2, y1, x1, y2);
 			}else if (content == Player.Nought) {
+				// If the cells content is Player.Nought then draw an oval
 				graphic2D.setColor(Color.BLUE);
 				graphic2D.drawOval(x1, y1, GameMain.SYMBOL_SIZE, GameMain.SYMBOL_SIZE);
 			}
