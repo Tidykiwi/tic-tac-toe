@@ -6,15 +6,13 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.JPanel;
-import javax.swing.Timer;
 import javax.swing.BorderFactory;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import java.awt.Paint;
 
 
 
@@ -36,6 +34,7 @@ public class GameMain extends JPanel implements MouseListener{
 	public static final int CELL_PADDING = CELL_SIZE / 6;    
 	public static final int SYMBOL_SIZE = CELL_SIZE - CELL_PADDING * 2;    
 	public static final int SYMBOL_STROKE_WIDTH = 8;
+	protected static final int EXIT_ON_CLOSE = 1;
 	
 	/*declare game object variables*/
 	// the game board 
@@ -54,7 +53,7 @@ public class GameMain extends JPanel implements MouseListener{
 	public GameMain() {   
 		
 		// TODO: This JPanel fires a MouseEvent on MouseClicked so add required event listener to 'this'.          
-	    
+	    addMouseListener(this);
 	    
 		// Setup the status bar (JLabel) to display status message       
 		statusBar = new JLabel("         ");       
@@ -70,8 +69,8 @@ public class GameMain extends JPanel implements MouseListener{
 		setPreferredSize(new Dimension(CANVAS_WIDTH, CANVAS_HEIGHT + 30));
 		
 		
-		// TODO: Create a new instance of the game "Board"class. HINT check the variables above for the correct name
-		Board board = new Board();
+		// DONE: Create a new instance of the game "Board"class. HINT check the variables above for the correct name
+		board = new Board();
 
 		
 		//DONE: call the method to initialise the game board
@@ -85,11 +84,12 @@ public class GameMain extends JPanel implements MouseListener{
 	         public void run() {
 				//create a main window to contain the panel
 				JFrame frame = new JFrame(TITLE);
+							
+				//DONE: create the new GameMain panel and add it to the frame
+				frame.add(new GameMain());
 				
-				//TODO: create the new GameMain panel and add it to the frame
-				
-				
-				//TODO: set the default close operation of the frame to exit_on_close
+				//DONE: set the default close operation of the frame to exit_on_close
+				frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
 				
 				frame.pack();             
 				frame.setLocationRelativeTo(null);
@@ -205,8 +205,9 @@ public class GameMain extends JPanel implements MouseListener{
 			initGame();            
 		}   
 		
-		//TODO: redraw the graphics on the UI          
-           
+		//DONE: redraw the graphics on the UI  
+		paint(getGraphics());
+        
 	}
 		
 	
